@@ -13,7 +13,6 @@ internal class Program
     static IEnumerable<string> ConvertLines(IEnumerable<string> inputLines, IConverter converter)
     {
         var outputLines = new List<string>();
-
         int lineNumber = 0;
         foreach (var line in inputLines)
         {
@@ -42,12 +41,10 @@ internal class Program
             return (int)ExitCode.InvalidArguments;
         }
 
-        IConverter converter = new Converter();
-
         var inputFileName = args[0];
         var outputFileName = args[1];
-
         string[]? inputLines;
+
         try
         {
             inputLines = File.ReadAllLines(inputFileName);
@@ -58,6 +55,7 @@ internal class Program
             return (int)ExitCode.ErrorReadingInputFile;
         }
 
+        IConverter converter = new Converter();
         var outputLines = ConvertLines(inputLines, converter);
 
         try
