@@ -31,3 +31,18 @@ The above Zim header is converted to the below Markdown header.
 
     # Header 1
 
+## Links
+
+    [[.\filename.txt]]
+
+The above Zim link is converted to the below Markdown link.
+
+    [.\filename.txt](filename.txt)
+
+## Images
+
+    {{.\docs\image.png}}
+
+The above image link is converted to the below Markdown image link.
+
+    <img src=".\docs\image.png"/>
