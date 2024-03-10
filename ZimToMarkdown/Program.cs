@@ -55,7 +55,7 @@ internal class Program
             return (int)ExitCode.ErrorReadingInputFile;
         }
 
-        IConverter converter = new Converter();
+        IConverter converter = new ZimToMarkdownConverter();
         var outputLines = ConvertLines(inputLines, converter);
 
         try

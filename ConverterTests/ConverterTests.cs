@@ -9,7 +9,7 @@ public class ConverterTests
     {
         var input = @"{{.\docs\image.png}}";
         var expected = @"<img src="".\docs\image.png""/>";
-        var converter = new Converter();
+        var converter = new ZimToMarkdownConverter();
         var actual = converter.Convert(input);
         Assert.AreEqual(expected, actual);
     }
@@ -19,7 +19,7 @@ public class ConverterTests
     {
         var input = @"{{{code: lang=""c-sharp""";
         var expected = "```cs";
-        var converter = new Converter();
+        var converter = new ZimToMarkdownConverter();
         var actual = converter.Convert(input);
         Assert.AreEqual(expected, actual);
     }
@@ -29,7 +29,7 @@ public class ConverterTests
     {
         var input = @"{{{code: lang=""python""";
         var expected = "```python";
-        var converter = new Converter();
+        var converter = new ZimToMarkdownConverter();
         var actual = converter.Convert(input);
         Assert.AreEqual(expected, actual);
     }
@@ -39,7 +39,7 @@ public class ConverterTests
     {
         var input = @"====== Header ======";
         var expected = "# Header";
-        var converter = new Converter();
+        var converter = new ZimToMarkdownConverter();
         var actual = converter.Convert(input);
         Assert.AreEqual(expected, actual);
     }
@@ -49,7 +49,7 @@ public class ConverterTests
     {
         var input = @"==== Header ====";
         var expected = "## Header";
-        var converter = new Converter();
+        var converter = new ZimToMarkdownConverter();
         var actual = converter.Convert(input);
         Assert.AreEqual(expected, actual);
     }
@@ -59,7 +59,7 @@ public class ConverterTests
     {
         var input = "''code''";
         var expected = "`code`";
-        var converter = new Converter();
+        var converter = new ZimToMarkdownConverter();
         var actual = converter.Convert(input);
         Assert.AreEqual(expected, actual);
     }
@@ -69,7 +69,7 @@ public class ConverterTests
     {
         var input = "[[link]]";
         var expected = "[link](link)";
-        var converter = new Converter();
+        var converter = new ZimToMarkdownConverter();
         var actual = converter.Convert(input);
         Assert.AreEqual(expected, actual);
     }
@@ -79,7 +79,7 @@ public class ConverterTests
     {
         var input = "\t";
         var expected = "    ";
-        var converter = new Converter();
+        var converter = new ZimToMarkdownConverter();
         var actual = converter.Convert(input);
         Assert.AreEqual(expected, actual);
     }

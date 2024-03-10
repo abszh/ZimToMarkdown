@@ -2,7 +2,7 @@
 
 namespace ZimToMarkdown;
 
-internal class Converter : IConverter
+internal class ZimToMarkdownConverter : IConverter
 {
     public string Convert(string input)
     {
