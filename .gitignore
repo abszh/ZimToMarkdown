@@ -1,3 +1,5 @@
-/.vs
+/.vs/
 /ZimToMarkdown/bin
 /ZimToMarkdown/obj
+/ConverterTests/bin
+/ConverterTests/obj

@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZimToMarkdown", "ZimToMarkdown\ZimToMarkdown.csproj", "{F4961370-09F2-41B9-A180-814BE8A502EB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConverterTests", "ConverterTests\ConverterTests.csproj", "{C516C158-5441-463B-BDAB-6C7C5FE03E90}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F4961370-09F2-41B9-A180-814BE8A502EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4961370-09F2-41B9-A180-814BE8A502EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4961370-09F2-41B9-A180-814BE8A502EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C516C158-5441-463B-BDAB-6C7C5FE03E90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C516C158-5441-463B-BDAB-6C7C5FE03E90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C516C158-5441-463B-BDAB-6C7C5FE03E90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C516C158-5441-463B-BDAB-6C7C5FE03E90}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
