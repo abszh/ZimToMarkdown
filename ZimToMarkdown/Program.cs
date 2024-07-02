@@ -28,21 +28,9 @@ internal class Program
         return outputLines;
     }
 
-    static void PrintUsage()
+    // TODO: Move this and ConvertLines into a separate class
+    static ExitCode Convert(string inputFileName, string outputFileName)
     {
-        Console.WriteLine("Usage: ZimToMarkdown.exe <zim file> <markdown file>");
-    }
-
-    static int Main(string[] args)
-    {
-        if (args.Length != 2)
-        {
-            PrintUsage();
-            return (int)ExitCode.InvalidArguments;
-        }
-
-        var inputFileName = args[0];
-        var outputFileName = args[1];
         string[]? inputLines;
 
         try
@@ -52,7 +40,7 @@ internal class Program
         catch (Exception ex)
         {
             Console.WriteLine($"Error when reading from {inputFileName}: {ex.Message}");
-            return (int)ExitCode.ErrorReadingInputFile;
+            return ExitCode.ErrorReadingInputFile;
         }
 
         IConverter converter = new ZimToMarkdownConverter();
@@ -65,9 +53,20 @@ internal class Program
         catch (Exception ex)
         {
             Console.WriteLine($"Error when writing to {outputFileName}: {ex.Message}");
-            return (int)ExitCode.ErrorWritingOutputFile;
+            return ExitCode.ErrorWritingOutputFile;
         }
 
-        return (int)ExitCode.Success;
+        return ExitCode.Success;
+    }
+
+    static int Main(string[] args)
+    {
+        if (args.Length != 2)
+        {
+            Console.WriteLine("Usage: ZimToMarkdown.exe <zim file path> <markdown file path>");
+            return (int)ExitCode.InvalidArguments;
+        }
+
+        return (int)Convert(args[0], args[1]);
     }
 }
